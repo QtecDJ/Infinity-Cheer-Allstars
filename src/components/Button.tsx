@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
@@ -6,20 +8,42 @@ interface ButtonProps {
 }
 
 const Button = ({ children, variant = 'primary', onClick, className = '' }: ButtonProps) => {
-  const baseStyles = 'relative px-8 py-4 rounded-xl font-black text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden group'
+  const baseStyles = 'relative px-8 py-4 rounded-xl font-black text-lg overflow-hidden cursor-pointer'
   
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-brand-red via-red-600 to-red-700 text-white shadow-xl hover:shadow-2xl before:absolute before:inset-0 before:bg-gradient-to-r before:from-red-700 before:to-brand-red before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300',
-    secondary: 'bg-white text-brand-black border-2 border-brand-black hover:bg-brand-black hover:text-white shadow-lg hover:shadow-xl'
+    primary: 'bg-gradient-to-r from-brand-red via-red-600 to-red-700 text-white shadow-2xl',
+    secondary: 'bg-white text-brand-black border-2 border-brand-black shadow-lg'
   }
 
   return (
-    <button 
+    <motion.button 
       onClick={onClick}
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: variant === 'primary' 
+          ? '0 20px 40px rgba(220, 38, 38, 0.4)' 
+          : '0 20px 40px rgba(0, 0, 0, 0.2)'
+      }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
     >
-      <span className="relative z-10">{children}</span>
-    </button>
+      <motion.span 
+        className="relative z-10"
+        initial={{ y: 0 }}
+        whileHover={{ y: -2 }}
+      >
+        {children}
+      </motion.span>
+      {variant === 'primary' && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-red-700 to-brand-red"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        />
+      )}
+    </motion.button>
   )
 }
 

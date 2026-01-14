@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import { Sparkles, ChevronDown } from 'lucide-react'
 import Button from './Button'
 
 const Hero = () => {
@@ -18,59 +20,138 @@ const Hero = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
 
+      {/* Floating Sparkles */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 1, 0.3],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          >
+            <Sparkles className="text-brand-red" size={16 + Math.random() * 16} />
+          </motion.div>
+        ))}
+      </div>
+
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-        <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
-          <h1 className="text-7xl md:text-9xl font-black mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.h1 
+            className="text-7xl md:text-9xl font-black mb-6 tracking-tight"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <motion.span 
+              className="block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+            >
               Infinity Cheer
-            </span>
-            <span className="block bg-gradient-to-r from-red-500 via-brand-red to-red-700 bg-clip-text text-transparent mt-2 drop-shadow-2xl">
+            </motion.span>
+            <motion.span 
+              className="block bg-gradient-to-r from-red-500 via-brand-red to-red-700 bg-clip-text text-transparent mt-2 drop-shadow-2xl"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               Allstars
-            </span>
-          </h1>
-        </div>
+            </motion.span>
+          </motion.h1>
+        </motion.div>
 
-        <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.3s' }}>
-          <p className="text-3xl md:text-4xl text-gray-200 mb-12 font-bold tracking-wider uppercase">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          <motion.p 
+            className="text-3xl md:text-4xl text-gray-200 mb-12 font-bold tracking-wider uppercase"
+            animate={{ 
+              scale: [1, 1.05, 1],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
             <span className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
               We are one.
             </span>
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="animate-fade-in-up opacity-0 flex flex-col sm:flex-row gap-6 justify-center items-center" style={{ animationDelay: '0.5s' }}>
-          <Button 
-            variant="primary" 
-            onClick={() => scrollToSection('contact')}
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Probetraining anfragen
-          </Button>
-          <Button 
-            variant="secondary" 
-            onClick={() => scrollToSection('teams')}
-          >
-            Unser Team
-          </Button>
-        </div>
-
-        {/* Scroll Indikator */}
-        <div className="animate-fade-in-up opacity-0 mt-20" style={{ animationDelay: '0.7s' }}>
-          <div className="inline-flex flex-col items-center">
-            <span className="text-gray-400 text-sm mb-2">Scroll für mehr</span>
-            <svg 
-              className="w-6 h-6 text-brand-red animate-bounce" 
-              fill="none" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth="2" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
+            <Button 
+              variant="primary" 
+              onClick={() => scrollToSection('contact')}
             >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </div>
-        </div>
+              Probetraining anfragen
+            </Button>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05, rotate: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button 
+              variant="secondary" 
+              onClick={() => scrollToSection('teams')}
+            >
+              Unser Team
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        {/* Animierter Scroll Indikator */}
+        <motion.div 
+          className="mt-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          <motion.div 
+            className="inline-flex flex-col items-center cursor-pointer"
+            onClick={() => scrollToSection('about')}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <span className="text-gray-400 text-sm mb-2">Scroll für mehr</span>
+            <motion.div
+              animate={{ 
+                y: [0, 5, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronDown className="w-8 h-8 text-brand-red" />
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
