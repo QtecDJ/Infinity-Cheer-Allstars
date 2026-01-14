@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion'
+import { FileText, ExternalLink } from 'lucide-react'
+
 const Documents = () => {
   const documents = [
     {
@@ -31,73 +34,74 @@ const Documents = () => {
   }
 
   return (
-    <section className="py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-6xl md:text-7xl font-black text-brand-black mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-brand-black via-gray-800 to-brand-black bg-clip-text text-transparent">
-              Dokumente & Infos
-            </span>
-          </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-brand-red to-transparent mx-auto mb-8"></div>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
-            Alle wichtigen Informationen, Regelwerke und Formulare auf einen Blick.
-          </p>
-        </div>
+    <section className="relative py-32 bg-gray-100">
+      {/* Diagonal Accent */}
+      <div className="absolute top-0 right-0 w-full h-24 bg-brand-red transform skew-y-2 origin-top-right"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <div className="inline-block bg-black border-8 border-brand-red px-10 py-4 mb-8">
+            <h2 className="text-4xl font-black text-brand-red uppercase tracking-widest">Documents</h2>
+          </div>
+          <h3 className="text-6xl md:text-8xl font-black text-black uppercase tracking-tight mb-6" style={{
+            textShadow: '4px 4px 0 #DC2626'
+          }}>
+            Dokumente
+          </h3>
+          <div className="w-32 h-2 bg-black mx-auto"></div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {documents.map((doc, index) => (
-            <div 
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
               onClick={() => openDocument(doc.url)}
-              className="relative bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-brand-red transition-all duration-300 hover:shadow-2xl cursor-pointer group overflow-hidden"
+              className="bg-white border-8 border-black p-8 cursor-pointer shadow-xl hover:shadow-2xl transition-shadow"
             >
-              {/* Hover Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/0 to-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <div className="relative flex items-start gap-5">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-brand-red via-red-600 to-red-700 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-black text-brand-black group-hover:text-brand-red transition-colors">
-                      {doc.title}
-                    </h3>
-                    <span className="text-xs font-black text-gray-500 bg-gray-100 px-3 py-1.5 rounded-lg">
-                      {doc.type}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {doc.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-brand-red font-black group-hover:gap-4 transition-all">
-                    <span>Öffnen</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </div>
-                </div>
+              {/* Icon */}
+              <div className="w-20 h-20 bg-black border-4 border-brand-red mb-6 flex items-center justify-center">
+                <FileText className="text-brand-red" size={40} strokeWidth={2.5} />
               </div>
-            </div>
+              
+              {/* Title */}
+              <h3 className="text-2xl font-black text-black mb-3 uppercase tracking-wide">{doc.title}</h3>
+              
+              {/* Type Badge */}
+              <div className="inline-block bg-gray-900 text-white px-4 py-1 font-bold uppercase text-sm mb-4 border-4 border-black">
+                {doc.type}
+              </div>
+              
+              {/* Divider */}
+              <div className="w-16 h-1 bg-brand-red mb-4"></div>
+              
+              {/* Description */}
+              <p className="text-gray-700 font-semibold mb-6 leading-relaxed">
+                {doc.description}
+              </p>
+              
+              {/* Open Link */}
+              <div className="pt-6 border-t-4 border-black flex items-center gap-3">
+                <span className="text-brand-red font-black uppercase tracking-wider">Öffnen</span>
+                <ExternalLink className="text-brand-red" size={20} strokeWidth={3} />
+              </div>
+            </motion.div>
           ))}
         </div>
-
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 flex items-start gap-4">
-          <svg className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <div>
-            <h4 className="font-bold text-blue-900 mb-1">Hinweis</h4>
-            <p className="text-blue-800 text-sm">
-              Die PDFs öffnen sich in einem neuen Tab. Stelle sicher, dass dein Browser Pop-ups für diese Seite erlaubt.
-            </p>
-          </div>
-        </div>
       </div>
+      
+      {/* Bottom Accent */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-black transform -skew-y-2 origin-bottom-left"></div>
     </section>
   )
 }
