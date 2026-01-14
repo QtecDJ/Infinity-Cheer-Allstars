@@ -15,11 +15,11 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-block bg-black border-8 border-brand-red px-10 py-4 mb-8">
-            <h2 className="text-4xl font-black text-brand-red uppercase tracking-widest">About Us</h2>
+          <div className="inline-block bg-black border-4 md:border-8 border-brand-red px-6 py-3 md:px-10 md:py-4 mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-4xl font-black text-brand-red uppercase tracking-widest">About Us</h2>
           </div>
-          <h3 className="text-6xl md:text-8xl font-black text-black uppercase tracking-tight mb-6" style={{
-            textShadow: '4px 4px 0 #DC2626'
+          <h3 className="text-4xl md:text-6xl lg:text-8xl font-black text-black uppercase tracking-tight mb-6" style={{
+            textShadow: '3px 3px 0 #DC2626'
           }}>
             Über Uns
           </h3>
@@ -34,7 +34,7 @@ const About = () => {
           transition={{ delay: 0.2 }}
           className="max-w-5xl mx-auto mb-20"
         >
-          <div className="bg-gradient-to-br from-brand-red to-red-800 border-8 border-black p-12 md:p-16 shadow-2xl">
+          <div className="bg-gradient-to-br from-brand-red to-red-800 border-4 md:border-8 border-black p-6 md:p-12 lg:p-16 shadow-2xl">
             <p className="text-2xl md:text-3xl text-white font-bold leading-relaxed mb-6 text-center uppercase">
               Die Infinity Cheer Allstars sind mehr als ein Team – wir sind eine Familie mit einem gemeinsamen Ziel.
             </p>
@@ -60,10 +60,10 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-white border-8 border-black p-10 text-center shadow-xl hover:shadow-2xl transition-shadow"
+              className="bg-white border-4 md:border-8 border-black p-6 md:p-10 text-center shadow-xl hover:shadow-2xl transition-shadow"
             >
-              <div className="w-24 h-24 bg-black border-4 border-brand-red mx-auto mb-6 flex items-center justify-center">
-                <item.icon className="text-brand-red" size={48} strokeWidth={2.5} />
+              <div className="w-16 h-16 md:w-24 md:h-24 bg-black border-4 border-brand-red mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                <item.icon className="text-brand-red" size={32} strokeWidth={2.5} />
               </div>
               <h4 className="text-2xl font-black text-black mb-3 uppercase tracking-wide">{item.title}</h4>
               <div className="w-16 h-1 bg-brand-red mx-auto mb-3"></div>

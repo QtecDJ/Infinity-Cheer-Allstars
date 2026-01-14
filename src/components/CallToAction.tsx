@@ -29,12 +29,12 @@ const CallToAction = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-block bg-white border-8 border-black px-10 py-4 mb-8 shadow-2xl">
-            <h2 className="text-4xl font-black text-brand-red uppercase tracking-widest">Join Us</h2>
+          <div className="inline-block bg-white border-4 md:border-8 border-black px-6 py-3 md:px-10 md:py-4 mb-6 md:mb-8 shadow-2xl">
+            <h2 className="text-2xl md:text-4xl font-black text-brand-red uppercase tracking-widest">Join Us</h2>
           </div>
           
-          <h3 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tight mb-6" style={{
-            textShadow: '6px 6px 0 #000'
+          <h3 className="text-4xl md:text-6xl lg:text-8xl font-black text-white uppercase tracking-tight mb-6" style={{
+            textShadow: '4px 4px 0 #000'
           }}>
             Werde Teil
           </h3>
@@ -52,7 +52,7 @@ const CallToAction = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleContact}
-            className="px-12 py-6 bg-white border-8 border-black text-black font-black text-2xl uppercase tracking-wider shadow-2xl hover:bg-black hover:text-white transition-colors"
+            className="px-6 py-3 md:px-12 md:py-6 bg-white border-4 md:border-8 border-black text-black font-black text-lg md:text-2xl uppercase tracking-wider shadow-2xl hover:bg-black hover:text-white transition-colors"
           >
             Kontakt Aufnehmen
           </motion.button>
@@ -72,9 +72,9 @@ const CallToAction = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-white border-8 border-black p-8 text-center shadow-2xl"
+              className="bg-white border-4 md:border-8 border-black p-6 md:p-8 text-center shadow-2xl"
             >
-              <div className="w-20 h-20 bg-black border-4 border-brand-red mx-auto mb-6 flex items-center justify-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-black border-4 border-brand-red mx-auto mb-4 md:mb-6 flex items-center justify-center">
                 <item.icon className="text-brand-red" size={40} strokeWidth={2.5} />
               </div>
               <h4 className="text-2xl font-black text-black mb-4 uppercase tracking-wider">{item.title}</h4>

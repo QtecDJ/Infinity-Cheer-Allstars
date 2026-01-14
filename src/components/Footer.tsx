@@ -94,10 +94,10 @@ const Footer = () => {
           onClick={scrollToTop}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-8 right-8 w-16 h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-brand-red hover:border-white shadow-2xl z-50 transition-colors"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-brand-red hover:border-white shadow-2xl z-50 transition-colors"
           aria-label="Nach oben scrollen"
         >
-          <ArrowUp className="text-black hover:text-white transition-colors" size={32} strokeWidth={3} />
+          <ArrowUp className="text-black hover:text-white transition-colors" size={24} strokeWidth={3} />
         </motion.button>
       </div>
     </footer>

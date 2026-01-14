@@ -30,10 +30,10 @@ const Hero = () => {
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: 'spring', duration: 1, delay: 0.2 }}
-          className="inline-block mb-8"
+          className="inline-block mb-6 md:mb-8"
         >
-          <div className="bg-white border-8 border-black px-8 py-4 shadow-2xl">
-            <span className="text-3xl font-black text-brand-red tracking-[0.3em] uppercase">EST. 2019</span>
+          <div className="bg-white border-4 md:border-8 border-black px-4 py-2 md:px-8 md:py-4 shadow-2xl">
+            <span className="text-lg md:text-3xl font-black text-brand-red tracking-[0.2em] md:tracking-[0.3em] uppercase">EST. 2019</span>
           </div>
         </motion.div>
 
@@ -43,14 +43,14 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="text-[8rem] md:text-[12rem] lg:text-[15rem] font-black leading-none tracking-tighter uppercase mb-0">
+          <h1 className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[15rem] font-black leading-none tracking-tighter uppercase mb-0">
             <span className="block text-white" style={{
-              textShadow: '8px 8px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000'
+              textShadow: '4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000'
             }}>
               INFINITY
             </span>
-            <span className="block text-white -mt-8" style={{
-              textShadow: '8px 8px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000'
+            <span className="block text-white -mt-4 md:-mt-8" style={{
+              textShadow: '4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000'
             }}>
               CHEER
             </span>
@@ -64,8 +64,8 @@ const Hero = () => {
           transition={{ type: 'spring', duration: 0.8, delay: 0.8 }}
           className="inline-block my-8"
         >
-          <div className="bg-black border-8 border-white px-16 py-6 shadow-2xl">
-            <span className="text-6xl md:text-7xl font-black text-brand-red tracking-wider uppercase">ALLSTARS</span>
+          <div className="bg-black border-4 md:border-8 border-white px-6 py-3 md:px-16 md:py-6 shadow-2xl">
+            <span className="text-3xl sm:text-4xl md:text-7xl font-black text-brand-red tracking-wider uppercase">ALLSTARS</span>
           </div>
         </motion.div>
 
@@ -75,14 +75,14 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
         >
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <Star className="text-white fill-white" size={32} />
-            <p className="text-5xl md:text-6xl font-black text-white uppercase tracking-wider" style={{
-              textShadow: '3px 3px 0 #000'
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 md:mb-12">
+            <Star className="text-white fill-white" size={20} />
+            <p className="text-2xl sm:text-3xl md:text-6xl font-black text-white uppercase tracking-wider" style={{
+              textShadow: '2px 2px 0 #000'
             }}>
               WE ARE ONE
             </p>
-            <Star className="text-white fill-white" size={32} />
+            <Star className="text-white fill-white" size={20} />
           </div>
         </motion.div>
 
@@ -97,7 +97,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('contact')}
-            className="px-12 py-5 bg-white border-8 border-black text-black font-black text-xl uppercase tracking-wider shadow-2xl hover:bg-black hover:text-white transition-colors"
+            className="px-6 py-3 md:px-12 md:py-5 bg-white border-4 md:border-8 border-black text-black font-black text-base md:text-xl uppercase tracking-wider shadow-2xl hover:bg-black hover:text-white transition-colors"
           >
             Join Our Team
           </motion.button>
@@ -105,7 +105,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('teams')}
-            className="px-12 py-5 bg-black border-8 border-white text-white font-black text-xl uppercase tracking-wider shadow-2xl hover:bg-white hover:text-black transition-colors"
+            className="px-6 py-3 md:px-12 md:py-5 bg-black border-4 md:border-8 border-white text-white font-black text-base md:text-xl uppercase tracking-wider shadow-2xl hover:bg-white hover:text-black transition-colors"
           >
             Our Teams
           </motion.button>
