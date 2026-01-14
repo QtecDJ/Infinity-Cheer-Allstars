@@ -4,6 +4,12 @@ import { FileText, ExternalLink } from 'lucide-react'
 const Documents = () => {
   const documents = [
     {
+      title: 'Vereinssatzung TSV Plattenhardt',
+      description: 'Offizielle Satzung des Turn- und Sportverein Plattenhardt 1913 e.V. - Stand 2026',
+      url: '/documents/Satzung_TSV_Plattenhardt_2026.pdf',
+      type: 'PDF'
+    },
+    {
       title: 'Cheerleading Regelwerk',
       description: 'Offizielle Regeln und Richtlinien für Cheerleading-Wettbewerbe',
       url: 'https://example.com/regelwerk.pdf',
@@ -19,12 +25,6 @@ const Documents = () => {
       title: 'Anmeldeformular',
       description: 'Formular für neue Mitglieder und Probetraining',
       url: 'https://example.com/anmeldung.pdf',
-      type: 'PDF'
-    },
-    {
-      title: 'Wettkampftermine',
-      description: 'Übersicht aller Wettbewerbe und Events 2026',
-      url: 'https://example.com/termine.pdf',
       type: 'PDF'
     }
   ]
