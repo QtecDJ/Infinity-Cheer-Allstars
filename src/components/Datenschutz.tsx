@@ -15,17 +15,18 @@ const Datenschutz = ({ onClose }: DatenschutzProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-white max-w-4xl w-full my-8 relative border-8 border-black"
+        className="bg-white max-w-2xl w-full my-8 relative border-4 md:border-8 border-black"
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-12 h-12 bg-brand-red border-4 border-black flex items-center justify-center hover:bg-black hover:border-brand-red transition-colors"
+          className="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-brand-red border-2 md:border-4 border-black flex items-center justify-center hover:bg-black hover:border-brand-red transition-colors z-10"
+          aria-label="Schließen"
         >
-          <X className="text-white" size={24} />
+          <X className="text-white" size={20} />
         </button>
 
-        <div className="p-8 md:p-12">
-          <h1 className="text-4xl md:text-6xl font-black text-black uppercase mb-8 border-b-4 border-brand-red pb-4">
+        <div className="p-4 md:p-8">
+          <h1 className="text-2xl md:text-4xl font-black text-black uppercase mb-4 md:mb-6 border-b-4 border-brand-red pb-2 md:pb-4 pr-12">
             Datenschutzerklärung
           </h1>
 
