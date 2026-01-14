@@ -1,65 +1,105 @@
+import { motion } from 'framer-motion'
+import { Users, Zap, Award, Star } from 'lucide-react'
+
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-brand-black mb-6">
+    <section id="about" className="relative py-28 bg-white overflow-hidden">
+      {/* Diagonal Stripe Background */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-brand-red to-red-700 transform -skew-y-2"></div>
+      <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-r from-black to-gray-900 transform skew-y-2"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-block px-8 py-3 bg-brand-red border-4 border-black rounded-lg mb-6 shadow-xl">
+            <Star className="inline-block text-white mr-2" size={24} />
+            <span className="text-2xl font-black text-white tracking-widest uppercase">About Us</span>
+            <Star className="inline-block text-white ml-2" size={24} />
+          </div>
+          <h2 className="text-6xl md:text-8xl font-black text-black mb-4 tracking-tight uppercase" style={{
+            textShadow: '4px 4px 0 #DC2626'
+          }}>
             Über uns
           </h2>
-          <div className="w-24 h-1 bg-brand-red mx-auto"></div>
-        </div>
+          <div className="w-32 h-2 bg-black mx-auto"></div>
+        </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="relative bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl p-10 md:p-16 shadow-2xl border border-gray-200 overflow-hidden">
-            {/* Dezenter Hintergrund-Effekt */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 rounded-full blur-3xl"></div>
-            
+        <motion.div 
+          className="max-w-6xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="relative bg-gradient-to-br from-brand-red via-red-700 to-black rounded-none p-12 md:p-16 shadow-2xl border-8 border-black overflow-hidden">
             <div className="relative z-10">
-              <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed mb-8 font-medium">
-                Die <span className="font-black text-brand-red bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Infinity Cheer Allstars</span> sind mehr als nur ein Team – 
-                wir sind eine <span className="font-bold text-brand-black">Familie</span>, die gemeinsam an einem Ziel arbeitet.
+              <p className="text-2xl md:text-3xl text-white leading-relaxed mb-8 font-bold uppercase text-center" style={{
+                textShadow: '2px 2px 0 #000'
+              }}>
+                Die <span className="font-black text-black bg-white px-3 py-1 inline-block transform -rotate-1">Infinity Cheer Allstars</span> sind mehr als nur ein Team – 
+                wir sind eine <span className="font-black underline decoration-4">Familie</span>, die gemeinsam an einem Ziel arbeitet.
               </p>
               
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12">
+              <p className="text-xl md:text-2xl text-gray-100 leading-relaxed mb-12 text-center font-semibold">
                 Mit Leidenschaft, Disziplin und unerschütterlichem Teamgeist trainieren wir für nationale 
                 Meisterschaften und entwickeln uns kontinuierlich weiter. Jedes Mitglied bringt seine individuelle 
                 Stärke ein – gemeinsam sind wir unaufhaltbar.
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6 mt-12">
-                <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-brand-red transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+              <div className="grid md:grid-cols-3 gap-8 mt-12">
+                <motion.div 
+                  className="text-center p-8 bg-white border-8 border-black shadow-2xl transform hover:scale-105 transition-transform"
+                  whileHover={{ y: -10 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <div className="w-24 h-24 bg-black flex items-center justify-center mx-auto mb-6 border-4 border-brand-red">
+                    <Users className="w-12 h-12 text-brand-red" />
                   </div>
-                  <h3 className="font-black text-xl text-brand-black mb-2">Teamgeist</h3>
-                  <p className="text-gray-600 font-medium">Zusammen sind wir stärker</p>
-                </div>
+                  <h3 className="font-black text-2xl text-black mb-3 uppercase tracking-wide">Teamgeist</h3>
+                  <p className="text-gray-700 font-bold uppercase text-sm">Zusammen sind wir stärker</p>
+                </motion.div>
 
-                <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-brand-red transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                <motion.div 
+                  className="text-center p-8 bg-white border-8 border-black shadow-2xl transform hover:scale-105 transition-transform"
+                  whileHover={{ y: -10 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <div className="w-24 h-24 bg-black flex items-center justify-center mx-auto mb-6 border-4 border-brand-red">
+                    <Zap className="w-12 h-12 text-brand-red" />
                   </div>
-                  <h3 className="font-black text-xl text-brand-black mb-2">Energie</h3>
-                  <p className="text-gray-600 font-medium">Mit voller Kraft voraus</p>
-                </div>
+                  <h3 className="font-black text-2xl text-black mb-3 uppercase tracking-wide">Energie</h3>
+                  <p className="text-gray-700 font-bold uppercase text-sm">Mit voller Kraft voraus</p>
+                </motion.div>
 
-                <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-brand-red transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                    </svg>
+                <motion.div 
+                  className="text-center p-8 bg-white border-8 border-black shadow-2xl transform hover:scale-105 transition-transform"
+                  whileHover={{ y: -10 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <div className="w-24 h-24 bg-black flex items-center justify-center mx-auto mb-6 border-4 border-brand-red">
+                    <Award className="w-12 h-12 text-brand-red" />
                   </div>
-                  <h3 className="font-black text-xl text-brand-black mb-2">Exzellenz</h3>
-                  <p className="text-gray-600 font-medium">Streben nach Perfektion</p>
-                </div>
+                  <h3 className="font-black text-2xl text-black mb-3 uppercase tracking-wide">Exzellenz</h3>
+                  <p className="text-gray-700 font-bold uppercase text-sm">Streben nach Perfektion</p>
+                </motion.div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
