@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
 import About from './components/About'
+import TeamApp from './components/TeamApp'
 import Teams from './components/Teams'
 import Achievements from './components/Achievements'
 import Documents from './components/Documents'
@@ -12,6 +13,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Hero />
       <About />
+      <TeamApp />
       <Teams />
       <Achievements />
       <Documents />

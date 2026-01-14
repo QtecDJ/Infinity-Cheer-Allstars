@@ -47,14 +47,21 @@ const Datenschutz = ({ onClose }: DatenschutzProps) => {
                 Verantwortlich für die Datenverarbeitung auf dieser Website ist:
               </p>
               <div className="bg-gray-100 p-4 border-4 border-black mb-4">
-                <p className="font-bold">Infinity Cheer Allstars</p>
-                <p>Weilhau Plattenhardt</p>
-                <p className="mt-2">E-Mail: info@icacheer.space</p>
+                <p className="font-bold text-brand-red">Infinity Cheer Allstars</p>
+                <p className="font-semibold">Abteilung des Turn- und Sportverein Plattenhardt 1913 e.V.</p>
+                <p className="mt-2">Weilhau Plattenhardt</p>
+                <p className="mt-2">E-Mail: <a href="mailto:info@icacheer.space" className="text-brand-red hover:underline">info@icacheer.space</a></p>
               </div>
-              <p>
+              <p className="mb-4">
                 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen 
                 über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
               </p>
+              <div className="bg-blue-50 border-4 border-blue-300 p-4">
+                <p className="text-sm text-blue-900 font-semibold">
+                  ℹ️ Die Infinity Cheer Allstars sind eine Abteilung des TSV Plattenhardt 1913 e.V. und verfügen über keine eigenständige 
+                  Rechtspersönlichkeit. Die datenschutzrechtliche Verantwortung liegt bei der Abteilung im Rahmen der Vereinsstruktur.
+                </p>
+              </div>
             </section>
 
             <section>

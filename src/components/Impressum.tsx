@@ -34,9 +34,12 @@ const Impressum = ({ onClose }: ImpressumProps) => {
             <section>
               <h2 className="text-2xl font-black text-black uppercase mb-4">Angaben gemäß § 5 TMG</h2>
               <div className="bg-gray-100 p-6 border-4 border-black">
-                <p className="font-bold text-lg mb-2">Infinity Cheer Allstars</p>
-                <p>Weilhau Plattenhardt</p>
-                <p className="mt-4">
+                <p className="font-bold text-lg mb-3 text-brand-red">Infinity Cheer Allstars</p>
+                <p className="font-semibold mb-2">Abteilung des Turn- und Sportverein Plattenhardt 1913 e.V.</p>
+                <p className="mt-3">
+                  <span className="font-bold">Anschrift:</span> Weilhau Plattenhardt
+                </p>
+                <p className="mt-2">
                   <span className="font-bold">E-Mail:</span> <a href="mailto:info@icacheer.space" className="text-brand-red hover:underline">info@icacheer.space</a>
                 </p>
                 <p className="mt-2">
@@ -46,53 +49,21 @@ const Impressum = ({ onClose }: ImpressumProps) => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black text-black uppercase mb-4">Vertreten durch</h2>
+              <h2 className="text-2xl font-black text-black uppercase mb-4">Vertreten durch den TSV Plattenhardt 1913 e.V.</h2>
               <p className="mb-4">
-                [Name des Vertretungsberechtigten / Vorstands]
+                Die Infinity Cheer Allstars sind eine Abteilung des Turn- und Sportverein Plattenhardt 1913 e.V. 
+                Alle rechtlichen Angaben beziehen sich auf den Hauptverein.
               </p>
-              <p className="text-sm text-gray-600 italic">
-                Hinweis: Bitte ergänzen Sie hier den Namen der vertretungsberechtigten Person(en) gemäß Ihrer Vereinssatzung.
-              </p>
+              <div className="bg-blue-50 border-4 border-blue-300 p-4">
+                <p className="text-sm text-blue-900 font-semibold">
+                  ℹ️ Für weitere rechtliche Informationen und offizielle Vereinsdaten kontaktieren Sie bitte den TSV Plattenhardt 1913 e.V.
+                </p>
+              </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-black text-black uppercase mb-4">Vereinsregister</h2>
-              <p className="mb-2">
-                <span className="font-bold">Registergericht:</span> [Name des Registergerichts]
-              </p>
-              <p className="mb-4">
-                <span className="font-bold">Registernummer:</span> [VR-Nummer]
-              </p>
-              <p className="text-sm text-gray-600 italic">
-                Hinweis: Bitte ergänzen Sie hier die Vereinsregisternummer, falls Ihr Verein eingetragen ist.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-black uppercase mb-4">Umsatzsteuer-ID</h2>
-              <p className="mb-2">
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-              </p>
-              <p className="mb-4">
-                [USt-IdNr. falls vorhanden]
-              </p>
-              <p className="text-sm text-gray-600 italic">
-                Hinweis: Falls Ihr Verein eine USt-IdNr. hat, tragen Sie diese hier ein. Andernfalls kann dieser Abschnitt entfernt werden.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-black uppercase mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-              <p className="mb-4">
-                [Name und Anschrift der verantwortlichen Person]
-              </p>
-              <p className="text-sm text-gray-600 italic">
-                Hinweis: Hier ist die für redaktionelle Inhalte verantwortliche Person anzugeben.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-black text-black uppercase mb-4">Haftung für Inhalte</h2>
+              <h2 className="text-2xl font-black text-black uppercase mb-4">Haftungsausschluss</h2>
+              <h3 className="text-lg font-bold text-black mb-2">Haftung für Inhalte</h3>
               <p className="mb-4">
                 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
                 allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht 
