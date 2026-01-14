@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Instagram, Facebook, Music, ArrowUp } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Impressum from './Impressum'
 import Datenschutz from './Datenschutz'
 import Barrierefreiheit from './Barrierefreiheit'
@@ -9,10 +9,19 @@ const Footer = () => {
   const [showImpressum, setShowImpressum] = useState(false)
   const [showDatenschutz, setShowDatenschutz] = useState(false)
   const [showBarrierefreiheit, setShowBarrierefreiheit] = useState(false)
+  const [showScrollButton, setShowScrollButton] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollButton(window.scrollY > 300)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <footer className="relative bg-black text-white py-16 border-t-8 border-brand-red">
@@ -110,15 +119,20 @@ const Footer = () => {
         </div>
 
         {/* Scroll to Top Button */}
-        <motion.button
-          onClick={scrollToTop}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-brand-red hover:border-white shadow-2xl z-50 transition-colors"
-          aria-label="Nach oben scrollen"
-        >
-          <ArrowUp className="text-black hover:text-white transition-colors" size={24} strokeWidth={3} />
-        </motion.button>
+        {showScrollButton && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            onClick={scrollToTop}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-brand-red hover:border-white shadow-2xl z-50 transition-colors"
+            aria-label="Nach oben scrollen"
+          >
+            <ArrowUp className="text-black hover:text-white transition-colors" size={24} strokeWidth={3} />
+          </motion.button>
+        )}
 
         {/* Modals */}
         {showImpressum && <Impressum onClose={() => setShowImpressum(false)} />}

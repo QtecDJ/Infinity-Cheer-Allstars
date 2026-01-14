@@ -7,10 +7,14 @@ interface ImpressumProps {
 
 const Impressum = ({ onClose }: ImpressumProps) => {
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div 
+      onClick={onClose}
+      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-y-auto"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+        onClick={(e) => e.stopPropagation()}
         className="bg-white max-w-4xl w-full my-8 relative border-8 border-black"
       >
         <button
