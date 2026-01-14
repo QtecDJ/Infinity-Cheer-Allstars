@@ -9,27 +9,29 @@ const Barrierefreiheit = ({ onClose }: BarrierefreiheitProps) => {
   return (
     <div 
       onClick={onClose}
-      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-y-auto"
+      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 md:p-4 overflow-y-auto"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-white max-w-2xl w-full my-8 relative border-4 md:border-8 border-black"
+        className="bg-white max-w-lg md:max-w-xl w-full my-4 md:my-8 relative border-4 border-black max-h-[90vh] overflow-y-auto"
       >
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-brand-red border-2 md:border-4 border-black flex items-center justify-center hover:bg-black hover:border-brand-red transition-colors z-10"
-          aria-label="Schließen"
-        >
-          <X className="text-white" size={20} />
-        </button>
-
-        <div className="p-4 md:p-8">
-          <h1 className="text-2xl md:text-4xl font-black text-black uppercase mb-4 md:mb-6 border-b-4 border-brand-red pb-2 md:pb-4 pr-12">
+        {/* Sticky Close Button */}
+        <div className="sticky top-0 bg-white z-20 border-b-4 border-black p-3 md:p-4 flex justify-between items-center">
+          <h1 className="text-xl md:text-2xl font-black text-black uppercase tracking-tight">
             Barrierefreiheit
           </h1>
+          <button
+            onClick={onClose}
+            className="w-12 h-12 md:w-14 md:h-14 bg-brand-red border-4 border-black flex items-center justify-center hover:bg-black hover:border-brand-red transition-colors flex-shrink-0"
+            aria-label="Schließen"
+          >
+            <X className="text-white" size={28} strokeWidth={3} />
+          </button>
+        </div>
 
+        <div className="p-4 md:p-6">
           <div className="space-y-6 text-gray-700">
             <section>
               <h2 className="text-2xl font-black text-black uppercase mb-4">Erklärung zur digitalen Barrierefreiheit</h2>
