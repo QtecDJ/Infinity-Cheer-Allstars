@@ -125,8 +125,6 @@ const Hero = () => {
             className="flex flex-col items-center gap-2"
           >
             <ChevronDown className="text-white" size={40} strokeWidth={3} />
-              <ChevronDown className="w-8 h-8 text-brand-red" />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
