@@ -3,7 +3,7 @@ import { Mail, MapPin, Clock } from 'lucide-react'
 
 const CallToAction = () => {
   const handleContact = () => {
-    window.location.href = 'mailto:info@infinity-cheer-allstars.de?subject=Probetraining Anfrage'
+    window.location.href = 'mailto:info@icacheer.space?subject=Probetraining Anfrage'
   }
 
   return (
@@ -61,8 +61,8 @@ const CallToAction = () => {
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-8 mt-20">
           {[
-            { icon: Mail, title: 'E-MAIL', info: 'info@infinity-cheer-allstars.de' },
-            { icon: MapPin, title: 'TRAINING', info: 'Sporthalle Musterstadt' },
+            { icon: Mail, title: 'E-MAIL', info: 'info@icacheer.space' },
+            { icon: MapPin, title: 'TRAINING', info: 'Weilhau Plattenhardt' },
             { icon: Clock, title: 'ZEITEN', info: 'Di & Do 17:00 - 19:00' }
           ].map((item, i) => (
             <motion.div

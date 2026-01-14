@@ -5,6 +5,7 @@ import Achievements from './components/Achievements'
 import Documents from './components/Documents'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
+import AccessibilityPanel from './components/AccessibilityPanel'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Documents />
       <CallToAction />
       <Footer />
+      <AccessibilityPanel />
     </div>
   )
 }

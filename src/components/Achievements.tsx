@@ -4,7 +4,7 @@ import { Trophy, Star, TrendingUp, Heart } from 'lucide-react'
 const Achievements = () => {
   const achievements = [
     {
-      title: 'Landesmeisterschaften',
+      title: 'Landes-meisterschaften',
       description: 'Regelmäßige Teilnahme an den Landesmeisterschaften mit mehreren Teams in verschiedenen Altersklassen.',
       icon: Trophy
     },

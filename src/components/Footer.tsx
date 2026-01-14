@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion'
 import { Instagram, Facebook, Music, ArrowUp } from 'lucide-react'
+import { useState } from 'react'
+import Impressum from './Impressum'
+import Datenschutz from './Datenschutz'
+import Barrierefreiheit from './Barrierefreiheit'
 
 const Footer = () => {
+  const [showImpressum, setShowImpressum] = useState(false)
+  const [showDatenschutz, setShowDatenschutz] = useState(false)
+  const [showBarrierefreiheit, setShowBarrierefreiheit] = useState(false)
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -78,13 +86,25 @@ const Footer = () => {
               © 2026 Infinity Cheer Allstars
             </p>
             
-            <div className="flex gap-8 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors font-bold uppercase tracking-wider">
+            <div className="flex flex-wrap gap-6 text-sm justify-center md:justify-end">
+              <button 
+                onClick={() => setShowImpressum(true)}
+                className="text-gray-400 hover:text-white transition-colors font-bold uppercase tracking-wider"
+              >
                 Impressum
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors font-bold uppercase tracking-wider">
+              </button>
+              <button 
+                onClick={() => setShowDatenschutz(true)}
+                className="text-gray-400 hover:text-white transition-colors font-bold uppercase tracking-wider"
+              >
                 Datenschutz
-              </a>
+              </button>
+              <button 
+                onClick={() => setShowBarrierefreiheit(true)}
+                className="text-gray-400 hover:text-white transition-colors font-bold uppercase tracking-wider"
+              >
+                Barrierefreiheit
+              </button>
             </div>
           </div>
         </div>
@@ -99,6 +119,11 @@ const Footer = () => {
         >
           <ArrowUp className="text-black hover:text-white transition-colors" size={24} strokeWidth={3} />
         </motion.button>
+
+        {/* Modals */}
+        {showImpressum && <Impressum onClose={() => setShowImpressum(false)} />}
+        {showDatenschutz && <Datenschutz onClose={() => setShowDatenschutz(false)} />}
+        {showBarrierefreiheit && <Barrierefreiheit onClose={() => setShowBarrierefreiheit(false)} />}
       </div>
     </footer>
   )
